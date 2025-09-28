@@ -1,0 +1,178 @@
+<div class="progress-indicator" id="progressIndicator"></div>
+
+<div class="demo-banner" id="demoBanner">
+    🎯 Demo Mode Active - Form pre-filled with sample data for testing
+</div>
+
+<div class="container">
+    <div class="header">
+        <h1>🤖 AI Voice Recruitment System</h1>
+        <p>Intelligent candidate discovery with AI-powered voice qualification</p>
+        <div class="features">
+            <div class="feature">🔍 Multi-Platform Discovery</div>
+            <div class="feature">🎙️ AI Voice Calls</div>
+            <div class="feature">📧 Automated Outreach</div>
+            <div class="feature">🏢 Company Lead Gen</div>
+            <div class="feature">🚨 Hot Lead Alerts</div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form id="recruitmentForm">
+            <!-- Job Details Section -->
+            <div class="form-section">
+                <h2 class="section-title">
+                    <span class="section-icon">💼</span>
+                    Job Details
+                </h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="job_title">Job Title <span class="required">*</span></label>
+                        <input type="text" id="job_title" name="job_title" required placeholder="e.g., Senior React Developer">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company_name">Company Name <span class="required">*</span></label>
+                        <input type="text" id="company_name" name="company_name" required placeholder="e.g., TechCorp Inc">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">Location <span class="required">*</span></label>
+                        <input type="text" id="location" name="location" required placeholder="e.g., San Francisco, CA or Remote">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="salary_range">Salary Range</label>
+                        <input type="text" id="salary_range" name="salary_range" placeholder="e.g., $80,000 - $120,000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="job_description">Job Description</label>
+                    <textarea id="job_description" name="job_description" placeholder="Provide a detailed description of the role, responsibilities, and what makes this opportunity unique..."></textarea>
+                    <div class="help-text">A detailed description helps generate better candidate matches</div>
+                </div>
+            </div>
+
+            <!-- Candidate Requirements Section -->
+            <div class="form-section">
+                <h2 class="section-title">
+                    <span class="section-icon">🎯</span>
+                    Candidate Requirements
+                </h2>
+                
+                <div class="form-group">
+                    <label for="required_skills">Required Skills <span class="required">*</span></label>
+                    <input type="text" id="required_skills" name="required_skills" placeholder="Type skills and press Enter (e.g., JavaScript, React, Node.js)">
+                    <div class="help-text">Press Enter after each skill to add it as a tag</div>
+                    <div class="skills-tags" id="required_skills_tags"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferred_skills">Preferred Skills (Nice to Have)</label>
+                    <input type="text" id="preferred_skills" name="preferred_skills" placeholder="Additional skills that would be a plus">
+                    <div class="skills-tags" id="preferred_skills_tags"></div>
+                </div>
+            </div>
+
+            <!-- Search Parameters Section -->
+            <div class="form-section">
+                <h2 class="section-title">
+                    <span class="section-icon">🔍</span>
+                    Search Parameters
+                </h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company_keywords">Target Company Keywords</label>
+                        <input type="text" id="company_keywords" name="company_keywords" placeholder="startup, SaaS, fintech, enterprise">
+                        <div class="help-text">Types of companies to search for candidates (comma-separated)</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="max_candidates">Maximum Candidates</label>
+                        <select id="max_candidates" name="max_candidates">
+                            <option value="15">15 candidates</option>
+                            <option value="25" selected>25 candidates</option>
+                            <option value="50">50 candidates</option>
+                            <option value="100">100 candidates</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recruiter Information Section -->
+            <div class="form-section">
+                <h2 class="section-title">
+                    <span class="section-icon">👤</span>
+                    Recruiter Information
+                </h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="recruiter_name">Recruiter Name <span class="required">*</span></label>
+                        <input type="text" id="recruiter_name" name="recruiter_name" required placeholder="Your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="recruiter_email">Recruiter Email <span class="required">*</span></label>
+                        <input type="email" id="recruiter_email" name="recruiter_email" required placeholder="your.email@company.com">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Campaign Urgency</label>
+                    <div class="urgency-selector">
+                        <div class="urgency-option">
+                            <input type="radio" id="urgency_low" name="urgency" value="low">
+                            <label for="urgency_low">
+                                🟢 Low Priority<br>
+                                <small>30+ days</small>
+                            </label>
+                        </div>
+                        <div class="urgency-option">
+                            <input type="radio" id="urgency_medium" name="urgency" value="medium" checked>
+                            <label for="urgency_medium">
+                                🟡 Medium Priority<br>
+                                <small>2-4 weeks</small>
+                            </label>
+                        </div>
+                        <div class="urgency-option">
+                            <input type="radio" id="urgency_high" name="urgency" value="high">
+                            <label for="urgency_high">
+                                🔴 High Priority<br>
+                                <small>ASAP</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <h3>Ready to Find Perfect Candidates?</h3>
+                <p>Our AI will discover qualified candidates and contact them via voice calls and email automatically.</p>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    🚀 Launch AI Recruitment Campaign
+                </button>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <span>Launching your AI recruitment campaign...</span>
+                </div>
+                
+                <div class="success-message" id="successMessage">
+                    <h4>🎉 Campaign Started Successfully!</h4>
+                    <p>Your AI recruitment campaign is now running. You'll receive updates via email as candidates are found and contacted.</p>
+                    <p><strong>Request ID:</strong> <span id="requestId"></span></p>
+                    <p><strong>Expected Duration:</strong> 20-30 minutes</p>
+                    <p><strong>Features Active:</strong> Multi-platform discovery, AI voice calls, email outreach, hot candidate alerts</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
